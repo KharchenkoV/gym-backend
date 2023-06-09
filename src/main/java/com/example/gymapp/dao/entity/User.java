@@ -1,6 +1,7 @@
 package com.example.gymapp.dao.entity;
 
 import com.example.gymapp.dao.enums.Role;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -39,6 +40,9 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "user")
     private List<Token> tokens;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<Subscription> subscriptions;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

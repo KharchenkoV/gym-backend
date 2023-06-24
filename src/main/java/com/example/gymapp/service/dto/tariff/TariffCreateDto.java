@@ -14,6 +14,7 @@ import java.time.Period;
 @Builder
 public class TariffCreateDto {
     private String title;
+    private String description;
     private BigDecimal price;
     private Integer duration;
 }

@@ -21,6 +21,7 @@ public class Tariff {
     @GeneratedValue
     private Integer id;
     private String title;
+    private String description;
     private BigDecimal price;
     private Period duration;
 }

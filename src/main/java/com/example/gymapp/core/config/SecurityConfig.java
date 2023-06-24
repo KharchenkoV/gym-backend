@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/v1/auth/**",
+                                "/api/v1/tariff/all",
                                 "/api/v1/exercise",
                                 "/api/v1/exercise/{id}",
                                 "/api/v1/exercise/bodypart/{bodyPart}",

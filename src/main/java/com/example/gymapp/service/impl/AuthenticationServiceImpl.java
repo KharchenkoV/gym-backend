@@ -48,6 +48,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return AuthenticationResponseDto.builder()
                 .accessToken(jwtToken)
                 .refreshToken(refreshToken)
+                .role(savedUser.getRole().name())
                 .build();
     }
 
@@ -68,6 +69,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return AuthenticationResponseDto.builder()
                 .accessToken(jwtToken)
                 .refreshToken(refreshToken)
+                .role(user.getRole().name())
                 .build();
     }
     private void saveUserToken(User user, String jwtToken) {
